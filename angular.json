@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SmartSchool"
+    }
+  },
+  "defaultProject": "SmartSchool",
+  "cli": {
+    "analytics": "daa9b522-6cfe-420b-aa62-4b6a6ccb476f"
+  }
 }

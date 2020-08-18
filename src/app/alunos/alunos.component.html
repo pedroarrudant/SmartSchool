@@ -1,8 +1,19 @@
 <app-titulo [titulo]="titulo"></app-titulo>
 
-<ul>
-    <li *ngFor='let Aluno of Alunos'>
-        {{Aluno.nome}}
-    </li>
-</ul>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let aluno of alunos">
+        <th scope="row">{{aluno.id}}</th>
+        <td>{{aluno.nome}}</td>
+        <td>{{aluno.sobrenome}}</td>
+      </tr>
+    </tbody>
+  </table>
 

@@ -9,12 +9,12 @@ export class AlunosComponent implements OnInit {
 
   titulo:String = 'Alunos';
   public Alunos = [
-    'Aluno1',
-    'Aluno2',
-    'Aluno3',
-    'Aluno4',
-    'Aluno5',
-    'Aluno6',
+    {nome: 'Aluno1'},
+    {nome: 'Aluno2'},
+    {nome: 'Aluno3'},
+    {nome: 'Aluno4'},
+    {nome: 'Aluno5'},
+    {nome: 'Aluno6'},
   ];
 
   constructor() { }

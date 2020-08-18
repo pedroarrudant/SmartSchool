@@ -1,19 +1,23 @@
-<app-titulo [titulo]="titulo"></app-titulo>
-
-<table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Sobrenome</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let aluno of alunos">
-        <th scope="row">{{aluno.id}}</th>
-        <td>{{aluno.nome}}</td>
-        <td>{{aluno.sobrenome}}</td>
-      </tr>
-    </tbody>
-  </table>
-
+<div *ngIf="AlunoSelecionado">
+    <app-titulo [titulo]="'Aluno: ' + AlunoSelecionado"></app-titulo>
+    <button class="btn default" (click)="DeselecionarAluno()">Voltar</button>
+</div>
+<div *ngIf="!AlunoSelecionado">
+    <app-titulo [titulo]="titulo"></app-titulo>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="SelecaoAluno(aluno)">
+            <th scope="row">{{aluno.id}}</th>
+            <td>{{aluno.nome}}</td>
+            <td>{{aluno.sobrenome}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

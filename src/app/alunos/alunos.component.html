@@ -1,49 +1,47 @@
-<div *ngIf="AlunoSelecionado">
-    <div class="row">
-        <div class="mr-auto">
-            <app-titulo [titulo]="'Aluno: ' + AlunoSelecionado"></app-titulo>
-            <form>
-                <div class="form-group">
-                  <label for="idInput">id</label>
-                  <input type="text" class="form-control" id="idInput">
-                </div>
-                <div class="form-group">
-                    <label for="nomeInput">Nome</label>
-                    <input type="text" class="form-control" id="nomeInput">
-                  </div>
-                  <div class="form-group">
-                    <label for="sobrenomeInput">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenomeInput">
-                  </div>
-                <div class="row">
-                    <div class="mr-auto">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                    <div>
-                        <button class="btn btn-warning" (click)="DeselecionarAluno()">Voltar</button>
-                    </div>
-                </div>
-              </form>
-        </div>
+<div class="row">
+  <div *ngIf="AlunoSelecionado">
+    <div>
+        <app-titulo [titulo]="'Aluno: ' + AlunoSelecionado.nome"></app-titulo>
+        <form>
+          <div class="form-group">
+            <label for="idInput">id</label>
+            <input type="text" class="form-control" id="idInput" value="{{AlunoSelecionado.id}}">
+          </div>
+          <div class="form-group">
+            <label for="nomeInput">Nome</label>
+            <input type="text" class="form-control" id="nomeInput" value="{{AlunoSelecionado.nome}}">
+          </div>
+          <div class="form-group">
+            <label for="sobrenomeInput">Sobrenome</label>
+            <input type="text" class="form-control" id="sobrenomeInput" value="{{AlunoSelecionado.sobrenome}}">
+          </div>
+          <div class="row">
+              <button type="submit" class="btn btn-primary mr-auto">Submit</button>
+            <div>
+              <button class="btn btn-outline-danger mr-auto" (click)="DeselecionarAluno()">Fechar</button>
+            </div>
+          </div>
+        </form>
     </div>
-
-</div>
-<div *ngIf="!AlunoSelecionado">
+    
+  </div>
+  <div [ngClass]="{'col-sm-6' : AlunoSelecionado, 'col-sm-12': !AlunoSelecionado}">
     <app-titulo [titulo]="titulo"></app-titulo>
     <table class="table table-hover">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Sobrenome</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="SelecaoAluno(aluno)">
-            <th scope="row">{{aluno.id}}</th>
-            <td>{{aluno.nome}}</td>
-            <td>{{aluno.sobrenome}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="SelecaoAluno(aluno)">
+          <th scope="row">{{aluno.id}}</th>
+          <td>{{aluno.nome}}</td>
+          <td>{{aluno.sobrenome}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

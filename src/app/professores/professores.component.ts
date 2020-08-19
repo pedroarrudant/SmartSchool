@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Professor } from '../models/Professor';
 
 @Component({
   selector: 'app-professores',
@@ -9,7 +10,7 @@ export class ProfessoresComponent implements OnInit {
 
   public titulo = 'Professores';
 
-  ProfessorSelecionado: string;
+  ProfessorSelecionado: Professor;
 
   professores = [
     {id:1, nome:'Professor1', sobrenome:'Sobrenome1'},
@@ -18,8 +19,8 @@ export class ProfessoresComponent implements OnInit {
     {id:4, nome:'Professor4', sobrenome:'Sobrenome4'}
   ];
 
-  SelecionarProfessor(Professor: any){
-    this.ProfessorSelecionado = Professor.nome;
+  SelecionarProfessor(professor: Professor){
+    this.ProfessorSelecionado = professor;
   }
 
   DeselecionarProfessor(){

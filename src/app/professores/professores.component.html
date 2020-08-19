@@ -1,5 +1,5 @@
 <div *ngIf="ProfessorSelecionado">
-  <app-titulo [titulo]="'Professor: ' + ProfessorSelecionado"></app-titulo>
+  <app-titulo [titulo]="'Professor: ' + ProfessorSelecionado.nome"></app-titulo>
   <button class="btn default" (click)="DeselecionarProfessor()">Voltar</button>
 </div>
 <div *ngIf="!ProfessorSelecionado">

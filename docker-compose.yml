@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  smartschool:
+    image: smartschool
+    build: .
+    ports:
+      - 8081:80
